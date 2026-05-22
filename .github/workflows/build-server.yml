@@ -23,6 +23,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@e32b06a3e831ff2fbc6f08cf35be2085e3918014 # v3.6.1
+        with:
+          ocaml-compiler: "5"
+
       - name: Use dune
         uses: ocaml-dune/setup-dune@52d589512797f9c73ed0bb8d2f74a50fa67b1120 # v2.0.0
         with:
