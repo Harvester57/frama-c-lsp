@@ -16,3 +16,14 @@ updates:
       - dependency-name: "*"
         # ignore all major updates
         update-types: ["version-update:semver-major"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      prefix: "actions"
+    schedule:
+      interval: daily
+    groups:
+      actions-dependencies:
+        applies-to: version-updates
+        patterns:
+        - "*"
