@@ -169,7 +169,7 @@
         "eslint": "^8.57.0",
         "minimatch": "^3.1.2",
         "mocha": "^11.0.1",
-        "typescript": "^5.5.4"
+        "typescript": "^6.0.3"
     },
     "dependencies": {
         "@types/vscode-webview": "^1.57.5",
