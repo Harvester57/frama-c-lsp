@@ -34,4 +34,6 @@ jobs:
           dune-cache: true
 
 
-      - run: opam exec -- dune build
+      - run: |
+          opam install frama-c
+          opam exec -- dune build
