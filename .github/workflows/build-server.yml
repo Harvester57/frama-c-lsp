@@ -1,0 +1,36 @@
+name: Build Server
+
+on:
+  push:
+    paths:
+      - 'server/**'
+      - '.github/workflows/build-server.yml'
+  pull_request:
+    paths:
+      - 'server/**'
+      - '.github/workflows/build-server.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./server
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Use dune
+        uses: ocaml-dune/setup-dune@52d589512797f9c73ed0bb8d2f74a50fa67b1120 # v2.0.0
+        with:
+          version: "latest"
+
+      # - name: Lint
+      #   run: npm run lint
