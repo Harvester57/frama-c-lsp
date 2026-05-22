@@ -16,10 +16,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: ./server
 
     steps:
       - name: Checkout repository
@@ -31,6 +27,4 @@ jobs:
         uses: ocaml-dune/setup-dune@52d589512797f9c73ed0bb8d2f74a50fa67b1120 # v2.0.0
         with:
           version: "latest"
-
-      # - name: Lint
-      #   run: npm run lint
+          directory: server
