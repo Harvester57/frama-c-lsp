@@ -28,8 +28,6 @@ jobs:
         with:
           ocaml-compiler: "5"
 
-      - name: Use dune
-        uses: ocaml-dune/setup-dune@52d589512797f9c73ed0bb8d2f74a50fa67b1120 # v2.0.0
-        with:
-          version: "latest"
-          directory: server
+      - run: opam install ./server --deps-only --with-test
+
+      - run: opam exec -- dune build ./server
